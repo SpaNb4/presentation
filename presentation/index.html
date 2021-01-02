@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>CSS Grid Layout</title>
+
+	<meta name="description" content="CSS Grid Layout">
+	<meta name="author" content="Dzmitry Yarmoshkin">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/league.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<style>
+		p code {
+			color: #14c8d9;
+		}
+	</style>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<aside class="notes">
+					Hello everyone, my name is Dmitry Yermoshkin and the topic of my presentation is Grid layout
+				</aside>
+				<img src="https://liblessons.ru/wp-content/uploads/2019/02/css-grids.png"
+					style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+				<h3>CSS Grid Layout</h3>
+				<p>
+					<small>Created by <a href="http://github.com/spanb4">Dzmitry Yarmoshkin</a> </small>
+				</p>
+			</section>
+
+			<!-- Example of nested vertical slides -->
+			<section>
+				<section>
+					<aside class="notes">
+						CSS grid layout has the following features:
+						<br>
+						Let's consider each feature in more detail
+					</aside>
+					<h2>What is a grid?</h2>
+					<p>
+						A grid is a set of intersecting horizontal and vertical lines defining columns and rows.
+						Elements
+						can be placed onto the grid within these column and row lines.
+						Let's move on to the features:
+					<ul>
+						<li>Fixed and flexible track sizes;</li>
+						<li>Item placement;</li>
+						<li>Creation of additional tracks to hold content;</li>
+						<li>Alignment control.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fixed and flexible track sizes</h2>
+					<p>You can create a grid with fixed track sizes – using <code>pixels</code> for example. You can
+						also create a
+						grid using
+						flexible sizes with percentages or with the new <code>fr</code> unit designed for this purpose.
+					</p>
+				</section>
+				<section>
+					<h2>Item placement</h2>
+					<p>You can place items into a precise location on the grid using line numbers, names or by targeting
+						an area of the grid.
+					</p>
+				</section>
+				<section>
+					<h2>Creation of additional tracks to hold content</h2>
+					<p>
+						You can define an explicit grid with grid layout. The Grid Layout specification is flexible
+						enough
+						to add additional rows and columns when needed.
+					</p>
+				</section>
+				<section>
+					<aside class="notes">
+						So, we can align content along the line axis
+						<br>
+						and we can align content along the column axis
+						<br>
+						let's go to examples
+					</aside>
+					<h2 style="font-size: 40px;">Alignment control</h2>
+					<p style="font-size: 36px;">
+						Grid contains alignment features so we can control how the items align once placed into a grid
+						area, and how the entire grid is aligned.
+					</p>
+					<div class="fragment">
+						<p style="font-size: 24px;">Aligns content along the line axis:</p>
+						<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+								.wrapper {
+									display: grid;
+									justify-items: center;
+								}
+					</code></pre>
+					</div>
+					<div class="fragment">
+						<p style="font-size: 24px;">Aligns content along the column axis:</p>
+						<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+									.wrapper {
+										display: grid;
+										align-items: center;
+									}
+								</code></pre>
+					</div>
+				</section>
+				<section>
+					<aside class="notes">
+						now we can see that property justify-items: center align grid item to center
+					</aside>
+					<h2>justify-items: center</h2>
+					<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+								justify-items: center;
+							}
+						</code></pre>
+					<img src="https://sun9-75.userapi.com/impg/9-B8tM4xy6CVaM8YC7lWNdWAQ_pbTIaCzbMGEA/R5aWa4ugzfc.jpg?size=762x266&quality=96&proxy=1&sign=c98f6a949817fb1acdbf195b938fe1e5&type=album"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						justify-items: start aligns content to the left side of the area
+					</aside>
+					<h2>justify-items: start</h2>
+					<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+								justify-items: start;
+							}
+						</code></pre>
+					<img src="https://sun9-52.userapi.com/impg/GMuIxBckHHQLZXVxkccPvRXv2-FiTIE6XIU4rQ/guAhdQzrcDI.jpg?size=759x256&quality=96&proxy=1&sign=05036cdd42e014fd4640b4a66ed1b636&type=album"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						and justify-items: end aligns content to the right side of the area
+					</aside>
+					<h2>justify-items: end</h2>
+					<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+								justify-items: end;
+							}
+						</code></pre>
+					<img src="https://sun9-46.userapi.com/impg/HxCFU_T6_L2MNvn5GzOY1edESyrjykqlLSS9Pw/T0868cLQXSs.jpg?size=757x263&quality=96&proxy=1&sign=c68c314f646fab912d27f0921e392e8b&type=album"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						now we will move on to the align-items property, which aligns the items to row axis
+						<br>
+						align-items: center aligning items to the center of the area
+					</aside>
+					<h2>align-items: center</h2>
+					<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+								align-items: center;
+							}
+						</code></pre>
+					<img src="https://sun9-40.userapi.com/impg/alG57ljcLS-vU4xME_jnM1h0nKf5LC2N8j4Itw/17DeN6hrVBA.jpg?size=761x271&quality=96&proxy=1&sign=94d030fc5012cb26fbfc6ec4b36487a0&type=album"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						align-items: start aligning items to the top of the area
+					</aside>
+					<h2>align-items: start</h2>
+					<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+								align-items: start;
+							}
+						</code></pre>
+					<img src="https://sun9-52.userapi.com/impg/GMuIxBckHHQLZXVxkccPvRXv2-FiTIE6XIU4rQ/guAhdQzrcDI.jpg?size=759x256&quality=96&proxy=1&sign=05036cdd42e014fd4640b4a66ed1b636&type=album"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						and align-items: end aligning items to the bottom of the area
+					</aside>
+					<h2>align-items: end</h2>
+					<pre><code style="font-size: 20px;" class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+								align-items: end;
+							}
+						</code></pre>
+					<img src="https://sun9-3.userapi.com/impg/0zmH6BQoUtkslvD0wWESEjL57j6qalfJC91WmA/dT4yycMXz6s.jpg?size=761x262&quality=96&proxy=1&sign=8eff2f76962f9f77e00a0fed17cccfe0&type=album"
+						alt="">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<aside class="notes">
+						OK, as you may have seen earlier
+					</aside>
+					<h2>The Grid container</h2>
+					<p>
+						We create a grid container by declaring <code>display: grid</code> or
+						<code>display: inline-grid</code> on an element. As
+						soon as we do this, all direct children of that element become grid items.
+					</p>
+				</section>
+				<section>
+					<p>In this example, I have a containing div with a class of wrapper and, inside are five
+						child elements.
+					</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+							<div class="wrapper">
+								<div>One</div>
+								<div>Two</div>
+								<div>Three</div>
+								<div>Four</div>
+								<div>Five</div>
+							</div>
+						</code></pre>
+					<p>I make the .wrapper a grid container.</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+							.wrapper {
+								display: grid;
+							}
+						</code></pre>
+				</section>
+				<section>
+					<img
+						src="https://sun9-52.userapi.com/impg/RDGVnYeeif0TBFHUQp10pWTd4x5ba3jQF5QuRQ/jvWlbJbL8Yc.jpg?size=638x270&quality=96&proxy=1&sign=68130684c2d4c6825241aa63602373fd&type=album">
+					<p>All the direct children are now grid items</p>
+				</section>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h2>Grid Tracks</h2>
+					<p style="font-size: 36px;">
+						We define rows and columns on our grid with the <code>grid-template-columns</code> and
+						<code>grid-template-rows</code>
+						properties. These define grid tracks. A <i>grid track</i> is the space between any two lines on
+						the
+						grid. In the below image you can see a track highlighted – this is the first row track in our
+						grid.
+					</p>
+					<img height='200px;' src="https://mdn.mozillademos.org/files/14637/1_Grid_Track.png" alt="">
+				</section>
+
+				<section>
+					<aside class="notes">
+						I have now created a grid with three 200-pixel-wide column tracks
+					</aside>
+					<h2>Columns width</h2>
+					<p style="font-size: 36px;">I can add to our earlier example by adding the
+						<code>grid-template-columns</code>
+						property, then defining the
+						size of the column tracks.
+					</p>
+					<pre><code style="font-size: 18px;" class="hljs" data-trim data-line-numbers>
+						.wrapper {
+							display: grid;
+							grid-template-columns: 200px 200px 200px;
+						}
+					</code></pre>
+					<img style="margin-top: 0;"
+						src="https://sun9-14.userapi.com/impg/TT8xFBtNvmQQnyqP3vAVJWcYDdE1_4aGhJwWzA/EcvnLXPbZTU.jpg?size=638x113&quality=96&proxy=1&sign=e319e264812ba0b53585bc5ca4978a82&type=album"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						In this example, we create a definition with a 2fr track then two 1fr tracks
+					</aside>
+					<h2>The fr Unit</h2>
+					<p style="font-size: 24px;">Grid also introduces an additional length unit to
+						help us create flexible grid tracks. The new <code>fr</code> unit represents a fraction of the
+						available
+						space in the grid container.
+						The available
+						space is split <code>into four</code>. <code>Two parts</code> are given to the first track and
+						<code>one part</code> each to the next
+						two tracks.
+					</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+						.wrapper {
+							display: grid;
+							grid-template-columns: 2fr 1fr 1fr;
+						}
+					</code></pre>
+					<img src="https://sun9-46.userapi.com/impg/EWOcAYARAy1_ZK5_UCC-XXYBjZjuGiLtPn_udA/LAiPfFCfvC0.jpg?size=635x111&quality=96&proxy=1&sign=884b34384d42cd9767e853f01e9c9207&type=album"
+						alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<aside class="notes">
+						For example, the grid definition in the first image can be replaced with the
+						code we see in the second image.
+					</aside>
+					<h2>Track listings with repeat() notation</h2>
+					<p style="font-size: 24px;">Large grids with many tracks can use the <code>repeat()</code> notation,
+						to repeat all or
+						a section of the track listing.
+					</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+					.wrapper {
+						display: grid;
+						grid-template-columns: 1fr 1fr 1fr;
+					}
+				</code></pre>
+					<p style="font-size: 24px;">Can also be written as:
+					</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+					.wrapper {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+					}
+				</code></pre>
+				</section>
+				<section>
+					<aside class="notes">In this example I have created a grid with an initial 20-pixel track, then a
+						repeating section of 6
+						1fr tracks then a final 20-pixel track.
+					</aside>
+					<p>Repeat notation can be used for a part of the track listing.
+					</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+						.wrapper {
+							display: grid;
+							grid-template-columns: 20px repeat(6, 1fr) 20px;
+						}
+					</code></pre>
+
+
+				</section>
+			</section>
+			<section>
+				<aside class="notes">
+					And how we can see In our three column, two row grid we have
+					four column lines
+					<br>
+					It's worth noting that lines are numbered ...
+				</aside>
+				<h2>Grid lines</h2>
+				<p style="font-size: 24px;">It should be noted that when we define a grid we define the grid tracks, not
+					the lines. Grid then
+					gives us numbered lines to use when positioning items.
+				</p>
+				<img height="300px;"
+					src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout/1_diagram_numbered_grid_lines.png"
+					alt="">
+				<p style="font-size: 24px;">Lines are numbered according to the writing mode of the document. In a
+					left-to-right language, line 1
+					is on the left-hand side of the grid. In a right-to-left language, it is on the right-hand side of
+					the grid.</p>
+			</section>
+			<section>
+				<section>
+					<h2>Gutters</h2>
+					<p style="font-size: 24px;"><code>Gutters</code> between grid cells can be created using the
+						<code>column-gap</code> and <code>row-gap</code>
+						properties.
+					</p>
+					<img src="https://psv4.userapi.com/c856328/u104048063/docs/d5/a5c046014d9f/Bez_imeni-2.png?extra=7Z0WMPE8Lfri46O_hYeSt8Ut-FQHx6MpArD-yqjAGENvNlu57fma-pd0E8OJFyZvSV7S5yq3GuITvKqbM35utQ3L0bkXVGfg02QbwJNe6SJ7_MHU3ojDte36Hph3C618eUHYLCxxeS73goEtcz8bR9HZ"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						In the below example, I am creating a 10-pixel gap between columns and a 15px gap
+						between rows
+					</aside>
+					<h2>Gutters Example</h2>
+					<pre><code class="hljs" data-trim data-line-numbers>
+						.wrapper {
+							display: grid;
+							grid-template-columns: 1fr 1fr 1fr;
+							column-gap: 10px;
+							row-gap: 15px;
+						}
+					</code></pre>
+					<img src="https://sun9-64.userapi.com/impg/8qWLsaXVe9JVLDCUMg_ad9bdN98n20AUHEKt-A/GBgqJIeB5uY.jpg?size=636x126&quality=96&proxy=1&sign=03ff350a2ddde643a7af12ecef58e79f&type=album"
+						alt="">
+				</section>
+			</section>
+			<section>
+				<aside class="notes">
+					In the end, I would like to note that grid technology is quite new,
+					therefore may not work on very old browsers
+					<br>
+					But, as we can see, at the end of 2020,
+					95 percent of users browsers have grid support
+				</aside>
+				<h2>Browser support</h2>
+				<img src="https://sun9-54.userapi.com/impg/KwFIccr_vym03FdabaGzqEgl8Kos_jvzUbhuww/EIDW3nxqqPk.jpg?size=1356x509&quality=96&proxy=1&sign=e1f36b29fdc86c31572614a39da2c281&type=album"
+					alt="">
+			</section>
+			<section data-background="https://media.giphy.com/media/5scVaYq4hKA7u/giphy.gif">
+				<aside class="notes">
+					Thanks for attention!
+				</aside>
+				<h2>This is me when I'm preparing for this presentation!</h2>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+			plugins: [RevealNotes, RevealHighlight]
+		});
+	</script>
+
+</body>
+
+</html>
